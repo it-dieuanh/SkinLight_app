@@ -1,0 +1,164 @@
+/* Updated: 2025-10-05T02:18:43.238Z */
+/* Updated: 2025-10-04T15:07:14.009Z */
+/* Updated: 2025-10-04T14:23:20.403Z */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Neutral beige/cream color scheme */
+  --background: #FAF8F5;
+  --foreground: #4A4238;
+  --card: #FFFFFF;
+  --card-foreground: #4A4238;
+  --popover: #FFFFFF;
+  --popover-foreground: #4A4238;
+  --primary: #8B7355;
+  --primary-foreground: #FAF8F5;
+  --secondary: #E8E0D5;
+  --secondary-foreground: #4A4238;
+  --muted: #F5F1EB;
+  --muted-foreground: #9B8B7E;
+  --accent: #D4C4B0;
+  --accent-foreground: #4A4238;
+  --destructive: #C44536;
+  --border: #E8E0D5;
+  --input: #E8E0D5;
+  --ring: #8B7355;
+}
+
+.dark {
+  --background: #2C2520;
+  --foreground: #FAF8F5;
+  --card: #3A332D;
+  --card-foreground: #FAF8F5;
+  --popover: #3A332D;
+  --popover-foreground: #FAF8F5;
+  --primary: #C9B299;
+  --primary-foreground: #2C2520;
+  --secondary: #4A4238;
+  --secondary-foreground: #FAF8F5;
+  --muted: #4A4238;
+  --muted-foreground: #9B8B7E;
+  --accent: #8B7355;
+  --accent-foreground: #FAF8F5;
+  --destructive: #E76F51;
+  --border: #4A4238;
+  --input: #4A4238;
+  --ring: #C9B299;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient-slow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  .animate-gradient-slow {
+    animation: gradient-slow 15s ease infinite;
+    background-size: 200% 200%;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
