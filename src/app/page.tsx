@@ -6,45 +6,20 @@ import Image from "next/image";
 
 export default function Home() {
   const handleGoogleSignIn = () => {
-    // TODO: Implement Google OAuth
     window.location.href = "/login";
   };
-
-  // Array of 20 diverse face images for grid
-  const faceImages = [
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
-    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
-    "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80",
-    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80",
-    "https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&q=80",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
-    "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&q=80",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80",
-    "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80",
-    "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=400&q=80",
-    "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&q=80",
-    "https://images.unsplash.com/photo-1502378735452-bc7d86632805?w=400&q=80",
-    "https://images.unsplash.com/photo-1504199367641-aba8151af406?w=400&q=80",
-    "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&q=80"
-  ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Asymmetric Layout */}
       <section className="min-h-screen flex items-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/15" />
-        
+
         <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 
+              <h1
                 className="text-5xl md:text-7xl font-bold tracking-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
@@ -54,13 +29,14 @@ export default function Home() {
                 </span>
               </h1>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
+              <Button
                 onClick={handleGoogleSignIn}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg group"
               >
+                {/* Google icon svg */}
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -77,7 +53,17 @@ export default function Home() {
           <div className="relative h-[500px] hidden md:block">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[3rem] rotate-6" />
             <div className="absolute inset-0 bg-card rounded-[3rem] shadow-2xl p-8 flex items-center justify-center">
-              <Camera className="w-32 h-32 text-primary opacity-20" />
+              {/* Logo thay cho icon Camera */}
+              <div className="relative w-[220px] h-[220px] opacity-90">
+                <Image
+                  src="/SkinLight.png"   
+                  alt="SkinLight logo"
+                  fill
+                  priority
+                  className="object-contain"
+                  sizes="220px"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -86,7 +72,7 @@ export default function Home() {
       {/* How SkinLight Works - Simple Grid Layout */}
       <section className="min-h-screen flex items-center px-4 py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-background" />
-        
+
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -96,7 +82,7 @@ export default function Home() {
               Simple, effective, and personalized skin analysis in four easy steps
             </p>
           </div>
-          
+
           {/* Simple 2x2 Grid Layout */}
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Capture */}
@@ -148,21 +134,7 @@ export default function Home() {
 
       {/* SkinLight is for Everyone - Split Layout */}
       <section className="min-h-screen flex items-center px-4 py-20 relative overflow-hidden">
-        {/* Background Image Grid */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-4 grid-rows-5 h-full w-full gap-0">
-            {faceImages.map((src, index) => (
-              <div key={index} className="relative w-full h-full overflow-hidden">
-                <Image
-                  src={src}
-                  alt={`Person ${index + 1}`}
-                  fill
-                  className="object-cover blur-sm"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Giữ gradient, bỏ grid ảnh nền */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -176,7 +148,7 @@ export default function Home() {
                 Our AI technology is designed to work with all skin types, tones, and conditions. 
                 Everyone deserves personalized skin care.
               </p>
-              <Button 
+              <Button
                 onClick={handleGoogleSignIn}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg group"
