@@ -50,22 +50,22 @@ export default function Home() {
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="relative h-[500px] hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[3rem] rotate-6" />
-            <div className="absolute inset-0 bg-card rounded-[3rem] shadow-2xl p-8 flex items-center justify-center">
-              {/* Logo thay cho icon Camera */}
-              <div className="relative w-[220px] h-[220px] opacity-90">
-                <Image
-                  src="/SkinLight.png"   
-                  alt="SkinLight logo"
-                  fill
-                  priority
-                  className="object-contain"
-                  sizes="220px"
-                />
-              </div>
-            </div>
-          </div>
+<div className="relative h-[500px] hidden md:block">
+  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[3rem] rotate-6" />
+  <div className="absolute inset-0 bg-card rounded-[3rem] shadow-2xl p-12 flex items-center justify-center">
+    <div className="relative aspect-square w-[260px] sm:w-[300px] md:w-[360px] lg:w-[420px]">
+      <Image
+        src="/SkinLight.png"        
+        alt="SkinLight logo"
+        fill
+        priority
+        className="object-contain"
+        sizes="(min-width:1024px) 420px, (min-width:768px) 360px, 300px"
+      />
+    </div>
+  </div>
+</div>
+
         </div>
       </section>
 
